@@ -10,6 +10,7 @@ app.get('/download', async (req, res) => {
             url: videoURL,
             responseType: 'stream'
         });
+        console.log(response);
         // Ensure headers are set for a download and match the response headers from the video source
         res.setHeader('Content-Type', response.headers['content-type']);
         res.setHeader('Content-Length', response.headers['content-length']);
