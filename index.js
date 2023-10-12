@@ -4,7 +4,10 @@ const app = express();
 const PORT = 4000;
 app.get('/download', async (req, res) => {
     try {
-        const videoURL = "https://storage.googleapis.com/storyboard-739ee.appspot.com/output_video.mp4";
+        const videoURL = req.query.videoURL;
+        if (!videoURL) {
+            return res.status(400).send('videoURL query parameter is required');
+        }
         const response = await axios({
             method: 'GET',
             url: videoURL,
