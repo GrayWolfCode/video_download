@@ -1,5 +1,5 @@
 {
-  "name": "video-downloader",
+  "name": "video_download",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
